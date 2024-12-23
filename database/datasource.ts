@@ -12,7 +12,7 @@ if (ENV.dbURL) {
     ssl: true,
     database: "ietp_smart_water",
     port: 5432,
-    entities: [__dirname + "/entities/**/*.ts"],
+    entities: [__dirname + "/entities/**/*.{ts,js}"],
     synchronize: process.env.NODE_ENV === "production" ? false : true,
   });
 } else {
