@@ -19,11 +19,11 @@ export const recordReading = async (req: UpdateDeviceRequest, res: Response) => 
     return;
   }
 
-  await deviceRepository.update(req.body.macAddress, req.body.turbidity, req.body.temperature, req.body.waterLevel);
+  await deviceRepository.update(macAddress, turbidity, temperature, waterLevel);
   res.status(200).json({
     status: "success",
     data: {
-      mac_address: req.body.macAddress,
+      mac_address: macAddress,
     },
   });
 };
