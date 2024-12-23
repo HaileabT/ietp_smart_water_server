@@ -134,7 +134,6 @@ export const getDataController = async (req: Request, res: Response) => {
     status: "success",
     data: {
       user,
-      device,
     },
   });
 };
