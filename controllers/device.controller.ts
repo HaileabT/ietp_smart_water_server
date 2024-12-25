@@ -19,7 +19,9 @@ export const recordReading = async (req: UpdateDeviceRequest, res: Response) => 
     return;
   }
 
-  await deviceRepository.update(macAddress, turbidity, temperature, waterLevel);
+  const newWaterVolume = waterLevel * device.surfaceArea;
+
+  await deviceRepository.update(macAddress, turbidity, temperature, newWaterVolume);
   res.status(200).json({
     status: "success",
     data: {
